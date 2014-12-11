@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import os
 import glob
 
+
 def downloadimages(url, level, minfilesize):
     global website
     netloc = parse.urlsplit(url).netloc.split('.')
@@ -50,6 +51,7 @@ def trim(im):
 def crop(im):
     return im.crop([355, 0, im.size[0], im.size[1]])
 
+
 if not os.path.exists('temp'):
     os.mkdir('temp')
 if not os.path.exists('images'):
@@ -61,7 +63,7 @@ netloc = parse.urlsplit(rootUrl).netloc.split('.')
 website = netloc[-2] + netloc[-1]
 
 print('Scraping OarSpotter')
-downloadimages(rootUrl, 1, 0)
+downloadimages(rootUrl, 2, 0)
 print('Finished scraping OarSpotter')
 
 print('Resizing images')
